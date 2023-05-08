@@ -1,0 +1,13 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd" layout="1column"> 
+<head>
+    <!-- <css src="Test_Helloworld::css/_extend.less"/> -->
+    <css src="Test_Helloworld::css/style.css"/>
+    <!-- <script src="Test_Helloworld::js/style.js"/></script> -->
+    <link src="Test_Helloworld::js/style.js"/>
+</head>
+<body> 
+    <referenceContainer name="content"> 
+        <block class="Test\Helloworld\Block\Helloworld" name="helloworld" template="helloworld.phtml" /> 
+    </referenceContainer> 
+</body> 
+</page>

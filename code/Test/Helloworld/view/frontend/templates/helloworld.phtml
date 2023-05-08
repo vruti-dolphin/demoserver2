@@ -1,0 +1,33 @@
+<div class="form-main">
+<form>
+	<div class="form">
+	  <label for="fname">First name:</label><br>
+	  <input type="text" id="fname" name="fname" value="John"><br>
+	  <div class="last-name">
+		  <label for="lname">Last name:</label><br>
+		  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+	  </div>
+	</div>
+  	<div class="radio-box">
+	  	<input type="radio" id="html" name="fav_language" value="HTML">
+	  	<label for="html">HTML</label>
+	  	<input type="radio" id="css" name="fav_language" value="CSS">
+	  	<label for="css">CSS</label><br>
+	</div>
+  	<div class="checkbox">
+	  	<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+	  	<label for="vehicle1"> I have a bike</label><br>
+	  	<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+	  	<label for="vehicle2"> I have a car</label><br>
+	  	<input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+	  	<label for="vehicle3"> I have a boat</label>
+	</div>
+</form> 
+
+
+<?php
+	$helper = $this->helper(\Test\Helloworld\Helper\Data::class);
+?>
+<?= $escaper->escapeHtml(__($helper->getStoreConfig())); ?>
+<?= $escaper->escapeHtml(__($helper->getStoreManagerData())); ?>
+</div>

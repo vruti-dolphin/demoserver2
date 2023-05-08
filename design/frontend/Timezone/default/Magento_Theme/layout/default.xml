@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="default_head_blocks"/>
+    <body>
+        <attribute name="class" value="custom-layout"/>
+
+        <!-- <referenceContainer name="breadcrumbs" display="false" /> -->
+
+        <referenceContainer name="header.panel">
+            <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::html/header-top-links.phtml"></block>
+        </referenceContainer>  
+
+        <!-- <referenceBlock name="top__links" display="false" /> -->
+
+        <!-- <referenceBlock name="header.links" display="false" /> -->
+
+        <move element="navigation.sections" destination="header-wrapper" as="news_aliass" after="logo" />
+
+        <move element="header.links" destination="header-wrapper" as="sign_in" after="serchicon" />
+
+        <referenceContainer name="header-wrapper">
+            <block class="Magento\Framework\View\Element\Template" name="serchicon" template="Magento_Theme::html/searchicon.phtml"></block>
+        </referenceContainer>  
+
+        <referenceContainer name="footer">
+            <block class="Magento\Framework\View\Element\Template" name="footer-icon" template="Magento_Theme::html/footer-item.phtml"></block>
+        </referenceContainer>  
+
+        <referenceBlock name="footer_links" display="false" />
+      
+        <referenceBlock name="form.subscribe" display="false" />
+
+        <!-- <move element="header.links" destination="header-wrapper" as="sign_link" after="serchicon" /> -->
+
+    </body>
+</page>

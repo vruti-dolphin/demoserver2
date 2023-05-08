@@ -1,0 +1,29 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="3column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" >
+    <body>
+        <!-- catalog_category_view_selectable_<Category ID>_<Layout Update Name>.xml -->
+        
+        <referenceContainer name="content">
+
+            <block class="Magento\Framework\View\Element\Template"  name="demo.page"  template="Magento_Theme::vruti/demo.phtml"></block>
+            
+            <block class="Magento\Cms\Block\Block" name="cutom.category.block">
+                <arguments>
+                  <argument name="block_id" xsi:type="string">category_page</argument>
+                </arguments>
+            </block>
+
+        </referenceContainer>
+
+        <referenceBlock name="product.info.review" display="false" />
+
+       <move element="category.image" destination="page.top" as="move-img" after="breadcrumbs" />
+
+       <!-- <referenceBlock name="product_list_toolbar_limiter" remove="true" /> -->
+    </body>
+</page>

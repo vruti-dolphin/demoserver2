@@ -1,0 +1,56 @@
+<button>test</button>
+
+<!-- <div data-mage-init='{"js/deps": {"status":"0"}}' class="deps">
+    <div>
+        <h1>map</h1>
+    </div>
+</div>  -->
+
+<!-- <div data-mage-init='{"custompath": {"status":"0"}}' class="path">
+    <div>
+        <h1>shim</h1>
+    </div>
+</div>  -->
+
+<div data-mage-init='{"Magento_Catalog/js/mixin_fold/mixin": {"status":"1"}}' class="mixin">
+    <div>
+        <h1>mixin</h1>
+    </div>
+</div>
+
+<div id="owlslider" class="products list items product-items">
+   <div class="owl-carousel">
+        <div class="item"><h1>1</h1></div>
+        <div class="item"><h1>2</h1></div>
+        <div class="item"><h1>3</h1></div>
+        <div class="item"><h1>4</h1></div>
+        <div class="item"><h1>5</h1></div>
+        <div class="item"><h1>6</h1></div>
+        <div class="item"><h1>7</h1></div>
+        <div class="item"><h1>8</h1></div>     
+    </div>
+</div>
+
+<script>
+    
+(function  () {
+    require(["jquery","owlcarousel","custompath"],function($) {
+        $(document).ready(function() {
+            $(".owl-carousel").owlCarousel({
+                autoPlay: false,
+                loop: true,
+                margin: 10,
+                nav: true,
+                items : 3
+            });
+        });
+        custompath();
+    });
+})();
+</script>
+
+<!-- <script>
+    require(['jquery', 'custompath'], function($, custompath) {
+        custompath();
+    });
+</script> -->

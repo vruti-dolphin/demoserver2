@@ -1,0 +1,223 @@
+<div id="popup-modal"><p>Hello World</p></div>
+
+<script>
+require(
+[
+    'jquery',
+    'Magento_Ui/js/modal/modal'
+],
+function(
+    $,
+    modal
+) {
+    let options = {
+        type: 'popup',
+        responsive: true,
+        innerScroll: true,
+        'width': 400,
+        'height': 400,
+         autoOpen:'false',
+        title: 'Modal Title',
+        autoOpen:'false',
+        modalClass: 'custom-modal',
+        buttons: [{
+            text: $.mage.__('Continue'),
+            class: '',
+            click: function () {
+                this.closeModal();
+            }
+        }]
+    };
+    
+    let $myModal = $('#popup-modal');
+    let popup = modal(options, $myModal);
+    
+    //this opens the modal, you can use some click event or whatever you need to trigger the modal here
+    $myModal.modal('openModal');
+});
+</script>
+
+<button type="button" class="action" data-trigger="trigger">
+    <span data-bind="i18n: 'Click Here'"></span>
+</button>
+<div data-bind="mageInit: {
+        'Magento_Ui/js/modal/modal':{
+            'type': 'popup',
+            'title': 'Popup title',
+            'width': 400,
+            'autoOpen':'false',
+            'height': 400,
+            'trigger': '[data-trigger=trigger]',
+            'responsive': true,
+            'buttons': [{
+                text: 'Submit',
+                class: 'action'
+            }]
+        }}" 
+        >
+    <div class="content">
+        Popup Content
+    </div>
+</div>
+
+<!-- accordian -->
+
+ <div id="accordion" data-mage-init='{
+        "accordion":{
+            "active": [1],
+            "collapsible": true,
+            "openedState": "active",
+            "multipleCollapsible": true
+        }}'>
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <h4>Title 1</h4>
+        </div>
+    </div>
+    <div data-role="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <h4>Title 2</h4>
+        </div>
+    </div>
+    <div data-role="content"> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <h4>Title 3</h4>
+        </div>
+    </div>
+    <div data-role="content">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</div>
+</div> 
+
+<!-- collapsible -->
+
+<div data-mage-init='{
+    "collapsible":{
+        "collapsible": true,
+        "openedState": "active",
+        "active": true,
+        "animate":{ "duration" :1000, "easing":"easeOutCubic"}
+    }}'>
+    <div data-role="title">
+        <h4>Fruit</h4>
+    </div>
+    <div data-role="content">
+        <ul>
+            <li>Orange</li>
+            <li>Apple</li>
+            <li>Banana</li>
+        </ul>
+    </div>
+</div>
+<div data-mage-init='{
+    "collapsible":{
+        "animate":{ "duration" :1000, "easing":"easeOutCubic"}
+    }}'>
+    <div data-role="title">
+        <h4>Exams</h4>
+    </div>
+    <div data-role="content">
+        <ul>
+            <li>Maths</li>
+            <li>English</li>
+            <li>Science</li>
+        </ul>
+    </div>
+</div>
+
+<!-- tab -->
+
+<div class="product data items"
+     data-mage-init='{"mage/tabs": {"openedState": "active", "animate": {"duration": 100}, "active": 1, "disabled": [2], "disabledState": "disabled"}}'>
+    <div class="item title" data-role="collapsible">
+        <a class="switch" data-toggle="trigger" href="#tab-cars">Cars</a>
+    </div>
+    <div id="tab-cars" class="item content" data-role="content">Cars content</div>
+
+    <div class="item title" data-role="collapsible">
+        <a class="switch" data-toggle="trigger" href="#tab-movies">Movies</a>
+    </div>
+    <div id="tab-movies" class="item content" data-role="content">Movies content</div>
+
+    <div class="item title" data-role="collapsible">
+        <a class="switch" data-toggle="trigger" href="#tab-music">Music</a>
+    </div>
+    <div id="tab-music" class="item content" data-role="content">Music Content</div>
+</div>
+
+<!-- dropdown -->
+
+<div class="customer-welcome">
+    <button
+        data-mage-init='{"dropdown":{}}'
+        data-toggle="dropdown"
+        class="action"
+        data-action="customer-menu-toggle">
+            <span><?= $block->escapeHtml(__('Dropdown open button')) ?></span>
+    </button>
+    <ul data-target="dropdown" class="dropdown-options">
+        <li>
+            <span class="item"><?= $block->escapeHtml(__('Item 1')) ?></span>
+        </li>
+        <li>
+            <span class="item"><a href="#"><?= $block->escapeHtml(__('Item 2 with link')) ?></a></span>
+        </li>
+        <li>
+            <span class="item"><?= $block->escapeHtml(__('Item 3')) ?></span>
+        </li>
+    </ul>
+</div>
+
+<form class="" id="new_search_form" action="/catalogsearch/result/" method="get">
+   <div class="field search">
+      <div class="control">
+          <input id="new-search"
+              data-mage-init='{"quickSearch":{
+                     "formSelector":"#new_search_form",
+                     "minSearchLength": 1,
+                     "url":"/search/ajax/suggest",
+                     "destinationSelector":"#search_results"}
+                    }'
+              type="text"
+              name="q"
+              placeholder="<?= $block->escapeHtmlAttr(__('Search entire store here...')) ?>"
+              class="input-text"/>
+         <div id="search_results" class="search-autocomplete"></div>
+      </div>
+  </div>
+  <div class="actions">
+    <button type="submit"
+            title="<?= $block->escapeHtml(__('Search')) ?>"
+            class="action search"
+            aria-label="Search">
+      <span><?= $block->escapeHtml(__('Search')) ?></span>
+    </button>
+
+  </div>
+</form>
+
+<!-- <div id="element">
+    <div class="tab-main active" data-role="collapsible">
+        <div data-role="trigger">
+            <span>Title 1</span>
+        </div>
+    </div>
+    <div class="tab-open" data-role="content">Content 1</div>
+
+    <div class="tab-main" data-role="collapsible">
+        <div data-role="trigger">
+            <span>Title 2</span>
+        </div>
+    </div>
+    <div class="tab-open" data-role="content">Content 2</div>
+
+    <div class="tab-main" data-role="collapsible">
+        <div data-role="trigger">
+            <span>Title 3</span>
+        </div>
+    </div>
+    <div class="tab-open" data-role="content">Content 3</div>
+</div> -->
+

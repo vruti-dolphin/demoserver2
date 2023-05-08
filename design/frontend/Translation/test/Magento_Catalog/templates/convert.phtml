@@ -1,0 +1,20 @@
+<!-- <h1>This is test file</h1> -->
+<?=  __('This is test file');?>
+
+
+<p> The required files are installed. Please check below to complete installation</p>
+      
+<p><input type = "checkbox" data-bind = "checked: agreeFlag" />I agree to all terms and conditions applied.</p>
+  
+<button data-bind = "enable: agreeFlag">Finish</button>
+
+<script type ="text/javascript">
+    require(['jquery', 'jquery/ui', 'slick'], function($) {
+        function ViewModel() {
+        	this.agreeFlag =  ko.observable(false)
+	    };
+
+	    var vm = new ViewModel();
+	    ko.applyBindings(vm);
+    });
+</script>

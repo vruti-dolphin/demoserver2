@@ -1,0 +1,122 @@
+
+
+
+/* .catalog-product-view .tab-open{
+    width: 100%;
+    left: 0;
+    top: 30px;
+}
+.catalog-product-view .tab-open {
+    display: none;
+}
+.catalog-product-view .tab-main.active +.tab-open {
+    display: block;
+    margin-top: -1px;
+}
+.catalog-product-view .tab-main.active {
+    background: white;
+    border-bottom: none;
+    z-index: 9;
+} */ 
+
+.block-collapsible-nav-content ul.nav.items {
+    display: none;
+}
+.widget.block.block-static-block .blockcall_widget{
+    background: #d3d3d369;
+    color: #454545;
+    padding: 22px;
+}
+div#switcher-language {
+    display: none;
+}
+div#switcher-currency {
+    display: none;
+}
+ul.nav {
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    list-style: none;
+}
+ul.item_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+    list-style: none;
+    background: #e6e6e6;
+}
+.adventures-inner {
+    column-gap: 33px;
+    margin-top: 20px;
+    display: flex;
+}
+.adventures-inner-two {
+    column-gap: 33px;
+    margin-top: 50px;
+    display: flex;
+}
+.nav_section ul.item_link {
+    padding: 10px;
+    padding-top: 18px;
+    font-size: 16px;
+}
+.nav_section.fixed{
+    width: 100%;
+    position: fixed;
+    top:0;
+    height: 50px;
+    z-index: 999;
+}
+.nav-item.active{
+    border-bottom: 1px solid black;
+    font-weight: 900;
+}
+a.nav-link:hover {
+    text-decoration: none;
+}
+li.nav-item a {
+    color: black;
+}
+.travel-contain h1 {
+    border-bottom: 1px solid gray;
+    padding-bottom: 16px;
+}
+.travel-contain button {
+    padding: 10px 20px 10px 20px;
+}
+.block.related {
+    margin-top: 100px;
+}
+.section_title {
+    font-size: 22px;
+    text-align: center;
+    background: gainsboro;
+    padding: 7px 30px;
+    margin-top: 36px;
+    margin-bottom: 50px;
+}
+
+.nav_section li.active a{
+  border-bottom: 2px solid gray;
+  color: black;
+}
+.nav_section a:hover{
+  color: black;
+}
+.minicart-wrapper .action.showcart:before{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+}
+td.m_-4072056735734013489footer {
+    text-align: center;
+}
+/* .page-wrapper.active{
+    margin-top: 100px;
+} */
+/* #section-1, #section-2, #section-3, #section-5, #section-1{
+    height: 100vh;
+} */

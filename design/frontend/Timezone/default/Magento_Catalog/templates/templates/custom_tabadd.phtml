@@ -1,0 +1,20 @@
+<div class="tab_section">
+	<div class="tab-title active">
+		<h2>details</h2>
+	</div>
+	<div class="tab-content">
+		<?php echo $this->getLayout()->createBlock("Magento\Framework\View\Element\Template")->setTemplate("Magento_Catalog::templates/custom_tab.phtml")->toHtml() ?>
+	</div>
+	<div class="tab-title">
+		<h2>more information</h2>
+	</div>
+	<div class="tab-content">
+		<?php echo $this->getLayout()->createBlock("Magento\Framework\View\Element\Template")->setTemplate("Magento_Catalog::templates/attributes.phtml")->toHtml() ?>
+	</div>
+	<div class="tab-title">
+		<h2>review</h2>
+	</div>
+	<div class="tab-content">
+		<?php echo $this->getLayout()->createBlock("Magento\Framework\View\Element\Template")->setTemplate("Magento-Review::form.phtml")->toHtml() ?>
+	</div>
+</div>

@@ -1,0 +1,65 @@
+<div class="timezone-footer">
+	<div class="footer-item-one">
+	<img src="<?php echo $this->getViewFileUrl('images/logo1.png'); ?>" alt="Demo">
+		<ul class="footer-address">
+			<li>Timezone GmbH</li>
+			<li>Am Baumgarten 8 </li>
+			<li>83064 Raubling(DE)</li>
+		</ul>
+		<div class="footer-icon">
+			<img src="<?php echo $this->getViewFileUrl('images/mastercard.svg'); ?>" alt="Demo" class="footer-img-1" >
+			<img src="<?php echo $this->getViewFileUrl('images/paypal.svg'); ?>" alt="Demo" class="footer-img-2" >
+			<img src="<?php echo $this->getViewFileUrl('images/viza.svg'); ?>" alt="Demo" class="footer-img-3" >
+		</div>
+	</div>
+	<div class="footer-item-two">
+		<h2 class="footer-beratung">SERVICE & BERATUNG</h2>
+		<ul class="footer-services">
+			<li>undenhotline: +49(0)803470550</li>
+			<li>Montag bis Donnerstag</li>
+			<li>09:00 bis 17:00 Uhr</li>
+			<li>Freitag 09:00 bis 15:00 Uhr</li>
+			<li>Lieferung und Versandkosten</li>
+			<li>Rückgabe</li>
+			<li>Kontakt</li>
+		</ul>
+	</div>
+	<div class="footer-item-third">
+		<h2 class="footer-info">KUNDENINFORMATION</h2>
+		<ul class="footer-services">
+			<li>FAQ </li>
+			<li>Datenschutz</li>
+			<li>Nutzungsregelungen</li>
+			<li>Bestellbedingungen</li>
+			<li>Größenberater</li>
+		</ul>
+	</div>
+	<div class="footer-item-four">
+		<h2 class="footer-impress">UNTERNEHMEN</h2>
+		<ul class="footer-services">
+			<li>Unternehmen</li>
+			<li>Karriere/Jobs</li>
+			<li>Storefinder</li>
+			<li>B2B Shop</li>
+			<li>Impressum</li>
+		</ul>
+	</div>
+	<div class="footer-item-five">
+		<h2 class="footer-Newsletter">Newsletter</h2>
+		<ul class="footer-services">
+			<li>Abonniere unseren Newsletter!</li>
+			<li>
+				<div class="footer-form">
+					<!-- <input type="email" name="email" placeholder="E-Mail Adresse">
+					<button>Abonnieren</button> -->
+					<?php echo $this->getLayout()->createBlock("Magento\Newsletter\Block\Subscribe")->setTemplate("Magento_Newsletter::subscribe.phtml")->toHtml() ?> 
+				</div>
+			</li>
+			<li>* Ich akzeptiere Datenschutzerklärung</li>
+		</ul>
+	</div>
+</div>
+<!-- 
+<div class="footer-copyright">
+	<p>©2020 Timezone GmbH</p>
+</div> -->		

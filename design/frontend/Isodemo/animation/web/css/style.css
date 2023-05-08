@@ -1,0 +1,25 @@
+.demo{
+	height: 200px;
+	width: 200px;
+	background: gray;
+	border: 1px solid black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.img-wrapper {  
+	width: 400px;
+	height: 400px;
+	overflow: hidden; 
+}
+.inner-img {
+  transition: 0.3s;
+}
+.inner-img:hover {
+  transform: scale(1.1);
+}
+.img-wrapper {
+  display: inline-block;
+  box-sizing: border-box;
+  //border: 1px solid #000;
+}

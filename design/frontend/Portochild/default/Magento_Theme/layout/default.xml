@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="header.links">
+            <block class="Magento\Framework\View\Element\Html\Link" name="contact-top-header-link">
+                <arguments>
+                    <argument name="path" xsi:type="string">contact</argument>
+                    <argument name="label" xsi:type="string" translate="true">Contact Us</argument>
+                </arguments>
+            </block>
+
+           <!--  -->
+        </referenceBlock>
+      <!--   <referenceBlock name="header.links">
+            <block class="Magento\Framework\View\Element\Html\Link" name="wishlist-link" before="-" ifconfig="guestwishlist/general/addlink">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">My Wishlist</argument>
+                    <argument name="path" xsi:type="string" translate="false">wishlist</argument>
+                </arguments>
+            </block>
+        </referenceBlock> -->
+
+<!--         <referenceBlock name="navigation.sections">
+            <block class="Magento\Framework\View\Element\Template" name="navlink" template="Magento_Theme::nav_link.phtml"></block>
+        </referenceBlock> -->
+
+        <referenceBlock name="navigation.sections">
+            <!-- <block class="Magento\Framework\View\Element\Template" name="homepage.banner" template="Magento_Theme::nav_link.phtml" /> -->
+            <block class="Magento\Framework\View\Element\Html\Link" name="homepage.banner">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Buy Porto</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+
+        <referenceContainer name="footer">
+            <block class="Magento\Framework\View\Element\Template" name="footer-icon" template="Magento_Theme::footer-item.phtml"></block>
+        </referenceContainer>  
+
+        <referenceContainer name="header.panel">
+            <block class="Magento\Framework\View\Element\Template" name="toplink" template="Magento_Theme::top_link.phtml"></block>
+        </referenceContainer>
+
+        <referenceContainer name="header-wrapper">
+            <block class="Magento\Customer\Block\Account\Customer" name="customer_icon" template="Magento_Theme::header_link.phtml" ></block>
+        </referenceContainer>
+
+        <referenceBlock name="footer_links" remove="true" />
+        <referenceBlock name="form.subscribe" remove="true" />
+
+    </body>
+</page>

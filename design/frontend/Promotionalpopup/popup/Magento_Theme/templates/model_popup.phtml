@@ -1,0 +1,66 @@
+<div id="popup-modal">
+    <p>Hello World</p>
+    <button class="popup_button">submit</button>
+</div>
+
+<script>
+require(
+[
+    'jquery',
+    'Magento_Ui/js/modal/modal'
+],
+function(
+    $,
+    modal
+) {
+    let options = {
+        type: 'popup',
+        responsive: true,
+        innerScroll: true,
+        'width': 400,
+        'height': 400,
+        autoOpen:'false',
+        title: 'Modal Title',
+        autoOpen:'false',
+        modalClass: 'custom-modal',
+        buttons: [{
+            text: $.mage.__('Continue'),
+            class: 'popup_box',
+            click: function () {
+                this.closeModal();
+            }
+        }]
+    };
+    
+    let $myModal = $('#popup-modal');
+    let popup = modal(options, $myModal);
+    
+    //this opens the modal, you can use some click event or whatever you need to trigger the modal here
+    $myModal.modal('openModal');
+});
+
+</script>
+
+
+<!-- <button type="button" class="action" data-trigger="trigger">
+    <span data-bind="i18n: 'Click Here'"></span>
+</button>
+<div class="testing-modal" data-bind="mageInit: {
+        'Magento_Ui/js/modal/modal':{
+            'type': 'popup',
+            'title': 'Popup title',
+            'width': 400,
+            'autoOpen':'false',
+            'height': 400,
+            'trigger': '[data-trigger=trigger]',
+            'responsive': true,
+            'buttons': [{
+                text: 'Submit',
+                class: 'action popup_box popup_btn'
+            }]
+        }}" 
+        >
+    <div class="content">
+        Popup Content
+    </div>
+</div> -->

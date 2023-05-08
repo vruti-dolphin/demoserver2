@@ -43,3 +43,7 @@
 /var/package/*
 !/var/package/*.xml
 
+.htaccess
+autoload.php
+bootstrap.php
+etc/*

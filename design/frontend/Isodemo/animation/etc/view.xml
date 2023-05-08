@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Created By: Dolphin Web Solution Pvt. Ltd.
+ */
+-->
+<view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/view.xsd">
+    <vars module="Magento_Catalog">
+        <var name="breakpoints">
+            <var name="mobile">
+                <var name="conditions">
+                    <var name="max-width">1024px</var>
+                </var>
+                <var name="options">
+                    <var name="options">
+                        <var name="nav">dots</var>
+                    </var>
+                </var>
+            </var>
+        </var>
+    </vars>
+</view>

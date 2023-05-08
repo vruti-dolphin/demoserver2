@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+        header.header-details {
+        width: 100%;
+        max-width: 640px;
+        margin: 0 auto;
+        color: white;
+        padding-top: 50px;
+        background: #1f1f1f;
+    }
+
+    .header-details .logo {
+        font-size: 53px;
+        padding-left: 30px;
+    }
+
+    .email-container {
+        width: 100%;
+        max-width: 640px;
+        margin: 0 auto;
+        color: white;
+        background: #1f1f1f;
+    }
+
+    footer.footer-details {
+        width: 100%;
+        max-width: 640px;
+        margin: 0 auto;
+        color: white;
+        background: #1f1f1f;
+        padding-bottom: 30px;
+    }
+
+    .product_image {
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .product_image img {
+        width: 100%;
+        max-width: 576px;
+    }
+
+    .email_content {
+        padding: 0 30px 30px 30px;
+    }
+
+    .details p {
+        margin: 0;
+        padding-bottom: 10px;
+    }
+
+    .create_account {
+        font-size: 30px;
+        padding-bottom: 20px;
+    }
+
+    .border {
+        width: 100%;
+        height: 2px;
+        background: white;
+        margin-bottom: 10px;
+    }
+
+    .details button {
+        padding: 10px 30px 10px 30px;
+        width: 200px;
+        font-size: 18px;
+        margin-top: 9px;
+    }
+
+    .forget_pass p {
+        margin: 0;
+    }
+
+    .forget_pass {
+        padding: 30px;
+        background: #000;
+        text-align: center;
+    }
+
+    .footer-stonetile {
+        padding: 0 30px 0 30px;
+        text-align: center;
+    }
+
+    </style>
+</head>
+<body>
+    <header class="header-details">
+        <div class="logo">
+            <div>stonetile</div>
+            {{template config_path="design/email/header_template"}}
+        </div>
+    </header>
+    <div class="email-container">
+        <div class="product_image">
+            <img src="<?php echo $this->getViewFileUrl('images/eiffel.jpg'); ?>" />
+        </div>
+        <div class="email_content">
+            <div class="create_account">
+                Your account is ready.
+            </div>
+            <div class="details">
+                <p>Dear Customer {{trans "%name," name=$customer.name}}</p>
+                <p>Welcome to Stone Tile Canada Store.</p>
+                <p>To sign in to our site, use these credentials during checkout or on the My Account page</p>
+                <p><strong>{{trans "Email:"}}</strong> {{var customer.email}}</p>
+                <p>Password: Password you set when creating account.</p>
+                <div class="border"></div>
+                <p>Now you can proceed through checkout faster, track orders, manage addresses and view past orders.</p>
+                <button>START</button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer-details">
+        <div class="forget_pass">
+            <p>Forgot your password?</p>
+            <p>If need refresh your password, click here to reset it.</p>
+        </div>
+        <div class="footer-stonetile">
+            <p class="stonetile">STONETILE</p>
+            <p>Find A Store | Become A Member | Feedback</p>
+            <p>Follow us</p>
+            {{template config_path="design/email/footer_template"}}
+        </div>
+        
+    </footer>
+
+</body>
+</html>

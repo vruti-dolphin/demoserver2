@@ -1,0 +1,43 @@
+body{
+	background-color: white;
+	color: white;
+}
+.demo-main {
+    padding: 35px;
+}
+.demo-form input#fname {
+    width: 300px;
+}
+.demo-form label {
+    color: white;
+    font-size: 18px;
+}
+form.demo-form {
+    margin-bottom: 19px;
+    display: flex;
+    column-gap: 20px;
+}
+p.demo-pera {
+    width: 400px;
+}
+.demo-link img {
+    width: 41px;
+}
+.demo-link {
+    display: flex;
+}
+.demo-link a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+.demo-link a:hover {
+    color: blue;
+    border-bottom: 1px solid blue;
+}
+.product-img {
+    padding-top: 10px;
+}
+p.demo-pera.hide {
+    display: none;
+}

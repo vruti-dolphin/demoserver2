@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="mage/gallery/gallery.css"/>
+    </head>
+    <update handle="catalog_product_opengraph" />
+    <update handle="page_calendar"/>
+    <body>   
+
+        <referenceContainer name="content">
+            <block class="Magento\Cms\Block\Block" name="cutoms.product.block">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">product_page</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Catalog\Block\Product\View\Additional" name="product.info.additional" as="product_additional_data"/>   
+        </referenceContainer>
+
+        <referenceContainer name="product.info.main">
+            <block class="Magento\Framework\View\Element\Template" name="button.page" template="Magento_Theme::vruti/button.phtml" after="product.info.price"></block>
+        </referenceContainer>
+
+        <referenceContainer name="product.info.media">         
+           <block class="Magento\Framework\View\Element\Template" name="text.page" template="Magento_Theme::vruti/text.phtml" after="skip_gallery_before.wrapper" />           
+        </referenceContainer>
+        
+        <move element="page.main.title" destination="product.info.media" as="new_aliass" after="skip_gallery_before.wrapper" />
+        <!-- <referenceBlock name="product.info.stock.sku" remove="true" /> -->
+        <referenceBlock name="product.info.stock.sku" display="false" />
+
+        <referenceBlock name="product.info.review" display="false" />
+
+         <referenceContainer name="product.info.media">
+            <block class="Magento\Framework\View\Element\Template" name="custom.page" template="Magento_Theme::vruti/custome.phtml" after="product.info.media.image"></block>
+        </referenceContainer>  
+
+        <referenceContainer name="content">
+            <block class="Magento\Cms\Block\Block" name="block_identifier_tab" > 
+                <arguments>
+                    <argument name="block_id" xsi:type="string">test_tabs</argument>
+                </arguments>
+            </block>
+        </referenceContainer>           
+
+    </body>
+</page>

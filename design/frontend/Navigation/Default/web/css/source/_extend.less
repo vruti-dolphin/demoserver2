@@ -1,0 +1,51 @@
+@media screen and (max-width: 767px) {
+    .nav-sections {
+        .nav-sections-item-content {
+            .navigation {
+                .submenu {
+                    &:not(:first-child).expanded {
+                        // display: none !important;
+                    }
+                    .submenu.expanded {
+                        display: none !important;
+                    }
+                }
+                .level0 {
+                    >.level-top {
+                        width: 200px;
+                        position: unset;
+                    }
+                    position: relative;
+                }
+            }
+        }
+    }
+}
+.navigation .level0>.level1.parent.ui-menu-item.active ul {
+    display: block !important;
+}
+.navigation .level0>.level1.parent.ui-menu-item{
+    left: 100%;
+    width: 200px;
+}
+.navigation .level0>.level1.parent.ui-menu-item.active{
+    position: fixed;
+    top: 0;
+    background: #fff;
+    height: 100%;
+    width: 92%;
+    z-index: 9;
+    transition: 0.5s;
+    left: 0;
+}
+.navigation .level0>.level1.parent.ui-menu-item.active::before {
+    content: '\e617';
+    font-family: 'luma-icons';
+}
+.navigation .level0>.level1::after {
+    content: '\e622';
+    font-family: 'luma-icons';
+    padding-right: 10px;
+    right: 0;
+    position: absolute;
+}

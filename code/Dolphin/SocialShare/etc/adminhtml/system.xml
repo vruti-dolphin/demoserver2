@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="dolphin" translate="label" sortOrder="10">
+            <label>Dolphin</label>
+        </tab>
+        <section id="socialshare" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Socialshare</label>
+            <tab>dolphin</tab>
+            <resource>Dolphin_SocialShare::socialshare_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="display_text" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Display Text</label>
+                    <comment>This text will display on the frontend.</comment>
+                </field>
+            </group>
+             <group id="url" translate="label" type="text" sortOrder="30" showInDefault="1">
+                <label>Socialshare</label>
+                <field id="use_custom" translate="label" type="select" sortOrder="1" showInDefault="1" canRestore="1">
+                    <label>Socialshare</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="custom" translate="label" type="select" sortOrder="2" showInDefault="1" canRestore="1">
+                    <label>Instagram</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="use_custom">1</field>
+                    </depends>
+                    <comment>Make sure that base URL ends with '/' (slash), e.g. http://yourdomain/magento/</comment>
+                </field>
+                <field id="facebook" translate="label" type="select" sortOrder="3" showInDefault="1" canRestore="1">
+                    <label>facebook</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="use_custom">1</field>
+                    </depends>
+                    <comment>Make sure that base URL ends with '/' (slash), e.g. http://yourdomain/magento/</comment>
+                </field>
+                <field id="twitter" translate="label" type="select" sortOrder="3" showInDefault="1" canRestore="1">
+                    <label>Twitter</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="use_custom">1</field>
+                    </depends>
+                </field>
+                <field id="pinterest" translate="label" type="select" sortOrder="3" showInDefault="1" canRestore="1">
+                    <label>Pinterest</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="use_custom">1</field>
+                    </depends>
+                </field>
+                <field id="whatsapp" translate="label" type="select" sortOrder="3" showInDefault="1" canRestore="1">
+                    <label>Whatsapp</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="use_custom">1</field>
+                    </depends>
+                </field>
+                <field id="linkedin" translate="label" type="select" sortOrder="3" showInDefault="1" canRestore="1">
+                    <label>Linkedin</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="use_custom">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

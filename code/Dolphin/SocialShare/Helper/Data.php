@@ -4,49 +4,50 @@ namespace Dolphin\SocialShare\Helper;
 
 use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Store\Model\ScopeInterface;
+use Magento\Framework\App\Config\ScopeConfigInterface;
 
-class Data extends AbstractHelper
+class Data extends AbstractHelper 
 {
-	 public function __construct(\Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig)
+   protected $scopeConfig;
+
+   const XML_PATH_EMAIL_RECIPIENT = 'socialshare/url/custom';
+
+   public function __construct(
+      ScopeConfigInterface $scopeConfig)
    {
       $this->scopeConfig = $scopeConfig;
    }
 
-	// const XML_PATH_HELLOWORLD = 'socialshare/';
-
-	public function getConfigValue($field, $storeId = null)
-	{
-		return $this->scopeConfig->getValue(
-			$field, ScopeInterface::SCOPE_STORE, $storeId
-		);
-	}
-
-	// public function getGeneralConfig($code, $storeId = null)
-	// {
-
-	// 	return $this->getConfigValue(self::XML_PATH_HELLOWORLD .'general/'. $code, $storeId);
-	// }
-
-  	// public function isAllow()
-    // {
-    //     $isWishlistActive = $this->scopeConfig->getValue(
-    //         'socialshare\url\custom',
-    //         \Magento\Store\Model\ScopeInterface::SCOPE_STORE
-    //     );
-    //     echo $isWishlistActive;
-    //     exit();
-    //     return $isOutputEnabled && $isWishlistActive;
-    // }
-
-    protected $scopeConfig;
-     const XML_PATH_EMAIL_RECIPIENT = 'socialshare\url\use_custom';
-
-  	public function getReceipentEmail() {
+   public function getReceipentEmail() {
      $storeScope = \Magento\Store\Model\ScopeInterface::SCOPE_STORE;
 
-    return $this->scopeConfig->getValue(self::XML_PATH_EMAIL_RECIPIENT, $storeScope);
+     return $this->scopeConfig->getValue(self::XML_PATH_EMAIL_RECIPIENT, $storeScope);
+   }
 
-    }
+   public function isEnabled($scope = ScopeConfigInterface::SCOPE_TYPE_DEFAULT)
+   {
+      return $this->scopeConfig->isSetFlag(
+         'socialshare/url/custom',
+         $scope
+      );
+   }
+
+   public function isEnabledfb($scope = ScopeConfigInterface::SCOPE_TYPE_DEFAULT)
+   {
+      return $this->scopeConfig->isSetFlag(
+         'socialshare/url/facebook',
+          $scope
+      );
+   }
+
+   public function isEnabledtwitter($scope = ScopeConfigInterface::SCOPE_TYPE_DEFAULT)
+   {
+      return $this->scopeConfig->isSetFlag(
+         'socialshare/url/twitter',
+          $scope
+      );
+   }
 }
+
 
 

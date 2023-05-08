@@ -20,8 +20,6 @@ class Config extends \Magento\Framework\App\Action\Action
 	public function execute()
 	{
 
-		// TODO: Implement execute() method.
-
 		echo $this->helperData->getGeneralConfig('enable');
 		echo $this->helperData->getGeneralConfig('display_text');
 		exit();

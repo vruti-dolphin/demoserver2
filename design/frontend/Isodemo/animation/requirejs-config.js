@@ -8,8 +8,8 @@ var config = {
         }
     },
     "shim": {
-        "mgsaos": ['jquery'],
-    }
+        'mgsaos': ['jquery'],
+    },
     config: {
         mixins: {
             'mage/menu': {

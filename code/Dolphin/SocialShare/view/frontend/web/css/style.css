@@ -1,14 +1,3 @@
-.form {
-    width: 100%;
-    max-width: 50%;
+h1{
+    color: red;
 }
-.last-name {
-    padding-top: 10px;
-}
-.radio-box {
-    padding-bottom: 10px;
-}
-
-.form-main.active {
-    display: block;
-}  

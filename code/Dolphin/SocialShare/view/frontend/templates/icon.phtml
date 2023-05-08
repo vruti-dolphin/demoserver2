@@ -1,5 +1,11 @@
 <h1>hello world</h1>
-<?php 
-echo $this->helper('Dolphin\SocialShare\Helper\Data')->getReceipentEmail();
-?>
-  $scopeConfig = $this->_objectManager->create('Magento\Framework\App\Config\ScopeConfigInterface');
+<?= $this->helper('Dolphin\SocialShare\Helper\Data')->isEnabled(); ?>
+<?= $this->helper('Dolphin\SocialShare\Helper\Data')->isEnabledfb(); ?>
+<?= $this->helper('Dolphin\SocialShare\Helper\Data')->isEnabledtwitter(); ?>
+
+
+<?php if ($block->isEnabledicon()) : ?>
+    <a href="#" class="action instagram"><span><?= $block->escapeHtml(__('Add to Wish List2')) ?></span></a>
+<?php endif; ?>
+
+

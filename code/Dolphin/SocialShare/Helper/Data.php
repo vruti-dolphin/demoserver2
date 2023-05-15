@@ -1,27 +1,32 @@
 <?php
 
 namespace Dolphin\SocialShare\Helper;
-
 use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Store\Model\ScopeInterface;
 use Magento\Framework\App\Config\ScopeConfigInterface;
+use Magento\Framework\App\Helper\Context;
+use Magento\Store\Model\StoreManagerInterface;
+use Magento\Catalog\Model\Product;
+use Magento\Catalog\Api\ProductRepositoryInterface;
 
 class Data extends AbstractHelper 
 {
    protected $scopeConfig;
+   protected $productModel;
+   protected $productRepository;
 
    const XML_PATH_EMAIL_RECIPIENT = 'socialshare/url/custom';
 
    public function __construct(
-      ScopeConfigInterface $scopeConfig)
+      ScopeConfigInterface $scopeConfig,
+      Context $context,
+      Product $productModel,
+      ProductRepositoryInterface $productRepository)
    {
       $this->scopeConfig = $scopeConfig;
-   }
-
-   public function getReceipentEmail() {
-     $storeScope = \Magento\Store\Model\ScopeInterface::SCOPE_STORE;
-
-     return $this->scopeConfig->getValue(self::XML_PATH_EMAIL_RECIPIENT, $storeScope);
+      $this->productModel = $productModel;
+      $this->productRepository = $productRepository;
+      parent::__construct($context);
    }
 
    public function isEnabled($scope = ScopeConfigInterface::SCOPE_TYPE_DEFAULT)
@@ -36,7 +41,7 @@ class Data extends AbstractHelper
    {
       return $this->scopeConfig->isSetFlag(
          'socialshare/url/facebook',
-          $scope
+         $scope
       );
    }
 
@@ -44,9 +49,17 @@ class Data extends AbstractHelper
    {
       return $this->scopeConfig->isSetFlag(
          'socialshare/url/twitter',
-          $scope
+         $scope
       );
    }
+
+   public function getProductUrl($productId, $storeId)
+   {
+        $product = $this->productModel->load($productId);
+        $product->setStoreId($storeId);
+        $url = $product->getProductUrl();
+   }
+
 }
 
 

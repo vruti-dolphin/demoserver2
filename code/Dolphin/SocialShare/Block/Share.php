@@ -15,8 +15,7 @@ class Share extends Template
         parent::__construct($context);
     }
 
-    public function isEnabledicon()
-    {
-        return $this->helper->isEnabled();
-    }   
+
 }
+
+

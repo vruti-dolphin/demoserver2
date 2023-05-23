@@ -1,7 +1,7 @@
 require(['jquery', 'jquery/ui', 'slick'], function($) {
 	$(document).ready(function() {
-	    $(".new-link").click(function(){
-			$(".form-main").addClass('active');
+	    $("p.share").click(function(){
+			$(".social_main").toggleClass('active');
 		});
 	});	 
 });   

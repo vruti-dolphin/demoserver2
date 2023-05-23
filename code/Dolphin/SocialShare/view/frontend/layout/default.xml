@@ -1,8 +1,10 @@
+<?xml version="1.0"?>
+
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <script src="Dolphin_SocialShare::js/module.js"/>
+    </head>
     <body>
-        <referenceBlock name="content">
-            <block class="Magento\Framework\View\Element\Template" name="testicon" template="Dolphin_SocialShare::icon.phtml"/>
-        </referenceBlock>
         
     </body>
 </page>

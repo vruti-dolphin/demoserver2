@@ -6,6 +6,11 @@
                 <enable>1</enable>
                 <display_text>Hello World</display_text>
             </general>
+            <url>
+                <use_custom>
+                    <enable>1</enable>
+                </use_custom>
+            </url>
         </socialshare>
     </default>
 </config>
